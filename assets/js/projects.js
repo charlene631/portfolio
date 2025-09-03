@@ -5,8 +5,8 @@ const projects = [
     description:
       "Mon portfolio personnel avec animations Pokémon, Dark Mode et carte de profil interactive.",
     tech: ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
-    link: "https://charlene631.github.io/portfolio/",
-    image: "assets/image/TempsdAimerlogo.png"
+    link: "https://charlene631.github.io/portfoliolivrable/",
+    image: ""
   },
   {
     title: "Site de rencontre +50",
@@ -14,15 +14,15 @@ const projects = [
       "Site dynamique et interactif de début de formation. Projet en cours d'évolution.",
     tech: ["Node.js", "Express", "MySQL", "MongoDB"],
     link: "https://charlene631.github.io/site-de-rencontre/",
-    image: "assets/image/project-node.png"
+    image: ""
   },
   {
-    title: "Application React",
+    title: "accessiWeb",
     description:
       "App React moderne avec composants réutilisables et interactions dynamiques.",
-    tech: ["React", "CSS", "JavaScript"],
-    link: "#",
-    image: "assets/image/project-react.png"
+    tech: ["Node.js","React", "CSS", "JavaScript", "framework", "MySql"],
+    link: "https://accessi-web-khaki.vercel.app/",
+    image: ""
   }
 ];
 
