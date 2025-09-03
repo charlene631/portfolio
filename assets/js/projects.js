@@ -4,16 +4,16 @@ const projects = [
     title: "Portfolio Pokédex",
     description:
       "Mon portfolio personnel avec animations Pokémon, Dark Mode et carte de profil interactive.",
-    tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    tech: ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
     link: "https://charlene631.github.io/portfolio/",
-    image: ""
+    image: "assets/image/TempsdAimerlogo.png"
   },
   {
-    title: "Projet Node.js",
+    title: "Site de rencontre +50",
     description:
-      "Application web back-end avec Node.js et Express, gestion de base MySQL et MongoDB.",
+      "Site dynamique et interactif de début de formation. Projet en cours d'évolution.",
     tech: ["Node.js", "Express", "MySQL", "MongoDB"],
-    link: "#",
+    link: "https://charlene631.github.io/site-de-rencontre/",
     image: "assets/image/project-node.png"
   },
   {
