@@ -16,6 +16,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("darkToggle")?.addEventListener("click", toggleTheme);
 
+  // ================= Button back to top =================
+
+  // Récupérer le bouton
+const backToTopButton = document.getElementById('backToTop');
+
+// Fonction pour faire défiler vers le haut
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Ajouter l'événement click au bouton
+backToTopButton.addEventListener('click', scrollToTop);
+
   // ================= Scroll navigation =================
   const navLinks = [
     { id: "profilLink", target: "profilSection" },

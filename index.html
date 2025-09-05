@@ -22,6 +22,21 @@
   </head>
 
   <body>
+     <!-- Animated background particles -->
+  <div class="animated-bg">
+    <div class="bubble" style="--i:0.05;"></div>
+    <div class="bubble" style="--i:0.15;"></div>
+    <div class="bubble" style="--i:0.25;"></div>
+    <div class="bubble" style="--i:0.35;"></div>
+    <div class="bubble" style="--i:0.45;"></div>
+    <div class="bubble" style="--i:0.55;"></div>
+    <div class="bubble" style="--i:0.65;"></div>
+    <div class="bubble" style="--i:0.75;"></div>
+    <div class="bubble" style="--i:0.85;"></div>
+    <div class="bubble" style="--i:0.95;"></div>
+  </div>
+
+  
     <div class="grid-container">
       <!-- Header -->
       <header class="header" role="banner">
@@ -47,9 +62,19 @@
                 class="themeToggle"
                 id="darkToggle"
                 aria-label="Changer le thème"
+                aria-pressed="false"
                 title="Changer le thème"
               >
-                🌓
+                ☀️
+              </button>
+              <button
+                class="language-toggle"
+                id="languageToggle"
+                type="button"
+                aria-label="Changer la langue"
+                title="Changer la langue"
+              >
+                🇫🇷
               </button>
             </nav>
           </div>
@@ -136,6 +161,16 @@
           N'hésitez pas à me contacter pour toute question ou collaboration.
         </p>
         <p>À bientôt !</p>
+        <!-- Bouton retour en haut -->
+        <button
+          class="back-to-top"
+          id="backToTop"
+          type="button"
+          aria-label="Retour en haut de page"
+          title="Retour en haut"
+        >
+          ↑
+        </button>
       </section>
 
       <footer class="footer" role="contentinfo">

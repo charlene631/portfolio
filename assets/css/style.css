@@ -9,6 +9,10 @@
   --violet-2: #8C6ED5;
   --violet-deep: #5B3E99;
   --pink-1: #F7CFEA;
+  --neon-red: #ff4d6d;
+  --neon-blue: #4dcfff;
+  --cyber-purple: #c77aff;
+  --glow-intensity: 0 0 12px;
 
   /* neutrals */
   --bg: linear-gradient(135deg, #C5D9F1, #E5D9F7);
@@ -519,20 +523,195 @@ footer .social-links a:hover { opacity: .9; transform: translateY(-2px); }
 @keyframes shimmer { 0%{ transform: rotate(25deg) translate(-100%,-100%);} 100%{ transform: rotate(25deg) translate(100%,100%);} }
 
 /* ===============================
-   DARK MODE (kept and updated)
+   DARK MODE ANIMÉ OPTIMISÉ
 ================================= */
 body.dark {
-  background-color: #0e0e10;
-  color: #eaeaea;
+  background: linear-gradient(135deg, #0b0b0d, #1a1a23);
+  color: #e0e0e0;
 }
-body.dark .content-section,
-body.dark #profil {
-  background: linear-gradient(180deg, rgba(30,30,30,0.65), rgba(20,20,20,0.6));
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-}
-body.dark .card-face.front { /* keep front image as-is or adjust path if needed */ }
-body.dark input, body.dark textarea { background: #222; color: #eee; border: 1px solid #444; }
-body.dark .custom-card { background: linear-gradient(135deg,#2a2a2a,#3e3e3e); border: 4px solid #555; }
 
-/* small accessibility: focus states */
-a:focus, button:focus, input:focus, textarea:focus { outline: 3px solid rgba(140,110,213,0.18); outline-offset: 2px; }
+/* HEADER */
+body.dark .header {
+  background: linear-gradient(135deg, #1b1b2f, #2d1a3f, #3e1a3b);
+  color: #f0f0f0;
+}
+body.dark .header h1,
+body.dark .header-content h1 {
+  color: #f5f5f5;
+}
+body.dark .nav-menu a {
+  background: linear-gradient(135deg, #5b3e99, #8c6ed5);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+body.dark .nav-menu a:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+}
+
+/* PROFILE */
+body.dark #profil {
+  background: linear-gradient(180deg, rgba(30,30,30,0.85), rgba(25,25,25,0.9));
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  color: #ddd;
+}
+body.dark #profil h2 {
+  color: #cba0e6;
+}
+body.dark .buttonProfile {
+  background: linear-gradient(135deg, #8c6ed5, #5b3e99);
+  color: #fff;
+  border: 1px solid #5b3e99;
+}
+
+/* CONTENT SECTIONS */
+body.dark .content-section,
+body.dark .content-section--muted {
+  background: linear-gradient(180deg, rgba(35,35,35,0.85), rgba(25,25,25,0.9));
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  color: #e0e0e0;
+}
+body.dark .content-section h2 {
+  color: #cba0e6;
+}
+
+/* CARDS / FLIP */
+body.dark .card-face.front {
+  background: linear-gradient(135deg, #5b3e99, #8c6ed5);
+  color: #fff;
+  position: relative;
+}
+
+/* Animation lumière subtile adaptée dark */
+body.dark .card-face.front::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.1) 0%,
+    rgba(255,255,255,0.05) 50%,
+    rgba(255,255,255,0.1) 100%
+  );
+  transform: rotate(25deg);
+  filter: blur(15px);
+  animation: lightSweep 3s linear infinite;
+}
+
+body.dark .card-face.back {
+  background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+  color: #e0e0e0;
+}
+
+/* Skills / Info badges */
+body.dark .skill-badge,
+body.dark .info-badge {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* Return button */
+body.dark .return-btn {
+  background: linear-gradient(135deg, #cba0e6, #5b3e99);
+  color: #fff;
+}
+
+/* FORMS */
+body.dark input, 
+body.dark textarea {
+  background: #222;
+  color: #e0e0e0;
+  border: 1px solid #555;
+}
+body.dark form label {
+  color: #ccc;
+}
+body.dark form button {
+  background: linear-gradient(135deg, #8c6ed5, #5b3e99);
+  color: #fff;
+}
+
+/* FOOTER */
+body.dark .footerSection,
+body.dark footer.footer {
+  background: linear-gradient(135deg, #1b1b2f, #2d1a3f, #3e1a3b);
+  color: #f0f0f0;
+}
+body.dark footer .social-links a {
+  color: #ddd;
+}
+body.dark footer .social-links a:hover {
+  opacity: 1;
+}
+
+/* FOCUS ACCESSIBILITY */
+body.dark a:focus, 
+body.dark button:focus, 
+body.dark input:focus, 
+body.dark textarea:focus {
+  outline: 3px solid rgba(140,110,213,0.35);
+  outline-offset: 2px;
+}
+
+/* === ANIMATED BACKGROUND PARTICLES === */
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -10px; /* départ en bas de l’écran */
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: particleFloat linear infinite;
+  left: calc(100% * var(--i)); /* position horizontale */
+}
+
+/* Couleurs des bulles */
+.bubble:nth-child(3n+1) {
+  background: var(--neon-red);
+  box-shadow: var(--glow-intensity) var(--neon-red);
+  animation-duration: 15s;
+}
+
+.bubble:nth-child(3n+2) {
+  background: var(--neon-blue);
+  box-shadow: var(--glow-intensity) var(--neon-blue);
+  animation-duration: 12s;
+}
+
+.bubble:nth-child(3n+3) {
+  background: var(--cyber-purple);
+  box-shadow: var(--glow-intensity) var(--cyber-purple);
+  animation-duration: 18s;
+}
+
+/* Animation verticale */
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-100px) scale(1);
+    opacity: 0;
+  }
+}
